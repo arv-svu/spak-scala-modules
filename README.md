@@ -40,21 +40,62 @@ Maven, Scala/Java, SQL, Git concepts, Conceptual understanding of big data compo
 
 ## Git Collaboration
 
-I have added your github accounts to collaborators list. I guess, that should give full access on this repository.
+I have added your github accounts to collaborators list. I guess, that should give full access on this repository. \
+I have basic knowledge on DevOps. I am thinking of creating a branch for each module change. something like below. \
 
-I have basic knowledge on DevOps. I am thinking of creating a branch for each module. You can suggest something better.
+git checkout -b module-name-<change/feature desc> --> create pull request and merge in github.com \
+git checkout -b module-name-<change/feature desc> --> create pull request and merge in github.com
 
-git commands are below to clone and create a branch.
+Proposed git workflow with commands is below. for your reference.\
+Feel free to suggest if you know something better.
 
-$ git clone https://github.com/arv-svu/spark-scala-modules.git \
-$ git checkout -b <your module name> #create branch for each module \
-start coding in IDE and when you are done, \
-$ git add . \
-$ git commit -m <your comments> \
-$ git pull origin master \
-$ git push origin <your module/branch name>
-
-will review pull requests and merge together in our sprint
+    1.Clone current main branch from GitHub to your machine
+    command(s): git clone < repository url >
+    example: git clone https://github.com/arv-svu/spark-scala-modules.git
+    git log -all --graph
+    
+    2.Create new branch in your machine and checkout new branch
+    command(s): git checkout -b <yourinitials>-mod<100 to 199>-<project-name>
+    example1: git checkout -b av-mod100-scala-basics
+    example2: git checkout -b av-mod101-spark-basics
+    
+    3.Below are commands for example1 branch
+    
+        3.1.Add your module to your project in intellij idea. keep module name same as branch name. 
+            Refactor project structure per scala standards
+        
+        3.2.Start coding and commit locally to new branch as needed.
+        command(s): git checkout av-mod100-scala-basics
+                    git log --all --graph
+    
+                    git add .
+                    git commit -m "feature1: some desc"
+    
+                    git add .
+                    git commit -m "feature2: some desc"
+    
+                    git commit .
+                    git commit -m "features: all done"
+        
+        3.3.Push new branch to GitHub
+        command(s): git checkout av-mod100-scala-basics
+                    git log --all --graph
+                    git push origin av-mod100-scala-basics
+        
+    4.Goto github.com and compare & pull request.
+        
+    5.In github.com, review code and merge pull request into main branch
+        
+    6.Update local repository after the merge
+    command(s): git checkout main
+    git pull origin main
+    git log --all --graph
+    
+    7.Delete local branch safely
+    command(s): git branch -d av-mod100-scala-basics
+    
+    8.Delete remove branch safely
+    command(s): git push origin --delete av-mod100-scala-basics
 
 
 
