@@ -1,0 +1,24 @@
+# IntelliJ IDEA Specific
+
+target/
+.idea/
+out/
+.lib/
+
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+
+.eclipse
+.history
+.cache
+
+
+# Project specific
+
+/data
+/logs
+/log
